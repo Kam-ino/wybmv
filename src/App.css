@@ -121,6 +121,7 @@ body {
   display: flex;
   gap: 12px;
   align-items: center;
+  height: fit-content;
   will-change: transform;
   width: max-content;
   animation: scroll var(--duration, 12s) linear infinite;
@@ -134,8 +135,8 @@ body {
 
 
 .carousel img {
-  width: 140px;
-  height: 180px;
+  width: 240px;
+  height: 280px;
   object-fit: cover;
   border-radius: 12px;
   flex: 0 0 auto;
