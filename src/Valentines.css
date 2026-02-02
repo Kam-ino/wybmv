@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0e0e11;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.phone-frame {
+  width: 390px;
+  height: 100vh;
+  margin: 0 auto;
+  background: linear-gradient(#0f1020, #05050a);
+  color: white;
+  overflow-y: auto;
+  border-radius: 28px;
+  padding-bottom: 80px;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* STORY SECTIONS */
+.story-section,
+.memory-section {
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-card,
+.memory-card {
+  max-width: 300px;
+  text-align: center;
+}
+
+/* MEMORY */
+.carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.carousel img {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* QUESTION */
+.question {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.yes {
+  background: hotpink;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.no {
+  background: transparent;
+  border: 1px solid white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  padding: 24px;
+  border-radius: 20px;
+  width: 280px;
+}
+
+/* CELEBRATION */
+.celebration {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #ff69b4, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* DECAY */
+.decay-1 { filter: blur(0.5px); }
+.decay-2 { filter: blur(1px); }
+.decay-3 { filter: blur(2px) brightness(0.8); }
+.decay-4 { filter: blur(3px) brightness(0.6); }
+.decay-5 { filter: blur(5px) brightness(0.4); }
+.decay-6 { filter: brightness(0); }
