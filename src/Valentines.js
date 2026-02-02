@@ -3,9 +3,6 @@ import { motion, AnimatePresence, useAnimationControls, useScroll, useTransform 
 import './App.css'
 import Stack from './components/PolaroidStack'
 
-// =====================================================
-// CONFIG — EDIT THIS ONLY 💖
-// =====================================================
 export const ITINERARY = [
   'Meet up at ONE AYALA',
   'Go to BGC',
@@ -34,7 +31,7 @@ const STORY = [
     title: 'Prologue - The Ice',
     text:
       'Our story began on ice. Awkward steps, nervous laughs, hands reaching out for balance. We held onto each other, not knowing that this was how we’d face everything that came next.',
-    photos: ['/photos/ice1.jpg', '/photos/ice2.jpg'],
+    photos: ['/photos/ice1.jpg', '/photos/ice2.jpg','/photos/ice3.jpg','/photos/ice4.jpg','/photos/ice5.jpg'],
   },
   {
     title: 'Chapter 1 - Getting to Know Us Better',
@@ -68,16 +65,28 @@ const STORY = [
     photos: ['/photos/job1.jpg', '/photos/job2.jpg', '/photos/job3.jpg'],
   },
   {
-    title: 'Chapter 6 - Bye Bye Café',
+    title: 'Chapter 6 - Ascension',
+    text:
+        'Life slowly opened up to us. We went to places we had only talked about before, creating memories that felt lighter than the past. We were growing — not rushing, just becoming better versions of ourselves together.',
+    photos: ['/photos/food_(11).jpg', '/photos/food_(2).jpg', '/photos/food_(17).jpg', '/photos/food_(18).jpg'],
+  },
+  {
+    title: 'Chapter 7 - Bye Bye Café',
     text:
       'After 7 months, you left the café behind for a job I recommended. Now, you had more time for school. more time for us, more time to rest. A little less chaos, and a little more space to breathe, dream, and be present with each other.',
     photos: ['/photos/freedom.jpg', '/photos/freedom2.jpg', '/photos/freedom4.jpg', '/photos/freedom3.jpg'],
   },
   {
-    title: 'Chapter 7 - The Future',
+    title: 'Chapter 8 - The Family',
+    text:
+      'When you started joining my family more, everything felt real in a new way. There was warmth, curiosity, and a sense of belonging that didn’t need explaining. In that moment, I knew this wasn’t temporary. This was something worth protecting.',
+    photos: ['/photos/family1.jpg', '/photos/family2.jpg', '/photos/family3.jpg'],
+  },
+  {
+    title: 'Chapter 9 - The Future',
     text:
       'Nine months. We’re closing in on our Anniversary. Whatever comes next, I want to face it with you, hand in hand, building something even better than what we’ve already shared. I will always have your back, no matter what. Here’s to us, and to many more chapters ahead.',
-    photos: ['/photos/future1.jpg', '/photos/future2.jpg', '/photos/1.jpg'],
+    photos: ['/photos/future1.jpg', '/photos/future2.jpg', '/photos/1.jpg', '/photos/food_(5).jpg'],
   },
 ]
 
@@ -85,7 +94,6 @@ function InfiniteCarousel({ photos, duration, loopCopies = 6 }) {
   const trackRef = useRef(null)
   const [shift, setShift] = useState(0)
 
-  // Build a long loop: N copies, then duplicate that half once so it can wrap seamlessly
   const halfTrack = Array.from({ length: loopCopies }, () => photos).flat()
   const trackItems = [...halfTrack, ...halfTrack]
 
@@ -96,7 +104,6 @@ function InfiniteCarousel({ photos, duration, loopCopies = 6 }) {
     const measure = () => {
       const el = trackRef.current
       if (!el) return
-      // We duplicated once, so half the scrollWidth is one full "set"
       const half = el.scrollWidth / 2
       setShift(Number.isFinite(half) ? half : 0)
     }
@@ -113,8 +120,6 @@ function InfiniteCarousel({ photos, duration, loopCopies = 6 }) {
     }
   }, [photos.length, trackItems.length])
 
-  // If shift is 0 (not measured yet), CSS will effectively not animate;
-  // that's fine—once measured it will start moving.
   return (
     <div
       ref={trackRef}
@@ -136,7 +141,6 @@ export default function ProposalAdventure() {
   const [visible, setVisible] = useState({})
   const refs = useRef([])
   const fightsRef = useRef(null)
-  // carousel timing: seconds per photo (faster), and how many times to repeat the photo set for a longer loop
   const CAROUSEL_PER_PHOTO_SEC = 10
   const CAROUSEL_LOOP_COPIES = 6
 
@@ -198,7 +202,6 @@ export default function ProposalAdventure() {
         className="phone-frame"
         style={{ '--bg': isFightsActive ? dark : bgColor }}
     >
-      {/* HERO */}
       <section className="hero">
         <h1>Our Story</h1>
         <div style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
@@ -215,7 +218,6 @@ export default function ProposalAdventure() {
         <p>Scroll slowly 💖</p>
       </section>
 
-      {/* STORY */}
       {STORY.map((chapter, i) => (
         <section
             key={i}
@@ -258,7 +260,6 @@ export default function ProposalAdventure() {
         </section>
       ))}
 
-      {/* MEMORY PAGES */}
       {MEMORY_PAGES.map((page, i) => (
         <section
           key={i}
@@ -295,7 +296,6 @@ export default function ProposalAdventure() {
         </section>
       ))}
 
-      {/* ANNOUNCEMENTS */}
       {['Now,...', 'I have...', 'a question...'].map((t, j) => (
         <section
           key={`announce-${j}`}
@@ -317,7 +317,6 @@ export default function ProposalAdventure() {
         </section>
       ))}
 
-      {/* QUESTION */}
       <section className="question">
         <h1>Will You Be My<br />Valentine?</h1>
         <div className="choices">
@@ -349,7 +348,6 @@ export default function ProposalAdventure() {
         <p style={{fontSize: 12}}>on the 16th...</p>
       </section>
 
-      {/* BIG YES */}
       <AnimatePresence>
         {celebrate && (
           <motion.div className="celebration" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
