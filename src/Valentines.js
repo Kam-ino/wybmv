@@ -324,7 +324,7 @@ export default function ProposalAdventure() {
         <h1>Will You Be My<br />Valentine?</h1>
         <div className="choices">
           <button
-            className="yes"
+            className="btn"
             onClick={() => {
               setCelebrate(true)
               setShowItinerary(true)
@@ -334,7 +334,7 @@ export default function ProposalAdventure() {
           </button>
 
           <motion.button
-                className="yes"
+                className="btn"
                 animate={noButtonControls}
                 onClick={() => {
                     setNoCount((n) => n + 1)
@@ -351,23 +351,6 @@ export default function ProposalAdventure() {
         </div>
         <p style={{fontSize: 12}}>on the 16th...</p>
       </section>
-
-      {/* ITINERARY */}
-      <AnimatePresence>
-        {showItinerary && (
-          <motion.div className="modal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <motion.div className="modal-content" initial={{ scale: 0.9 }} animate={{ scale: 1 }}>
-              <h3>Our Valentine Adventure ✨</h3>
-              <ul>
-                {ITINERARY.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-              <button onClick={() => setShowItinerary(false)}>Close</button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* BIG YES */}
       <AnimatePresence>

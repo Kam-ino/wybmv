@@ -216,24 +216,17 @@ body {
   gap: 16px;
 }
 
-.yes {
+.btn {
   background: linear-gradient(135deg, #ff5d8f, #ff87ab);
   border: none;
   padding: 14px 28px;
   border-radius: 999px;
   font-size: 20px;
   color: white;
+  width: 40vw;
+  height: 20vw;
   box-shadow: 0 10px 30px rgba(255, 60, 110, 0.5);
 }
-
-.no {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.6);
-  padding: 14px 28px;
-  border-radius: 999px;
-  color: white;
-}
-
 
 /* MODAL */
 .modal {
