@@ -67,7 +67,7 @@ const STORY = [
   {
     title: 'Chapter 6 - Ascension',
     text:
-        'Life slowly opened up to us. We went to places we had only talked about before, creating memories that felt lighter than the past. We were growing — not rushing, just becoming better versions of ourselves together.',
+        'Life slowly opened up to us. We went to places we had only talked about before, creating memories that felt lighter than the past. We were growing, not rushing, just becoming better versions of ourselves together.',
     photos: ['/photos/food_(11).jpg', '/photos/food_(2).jpg', '/photos/food_(17).jpg', '/photos/food_(18).jpg'],
   },
   {
