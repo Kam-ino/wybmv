@@ -20,7 +20,10 @@ body {
   box-shadow: 0 30px 80px rgba(255, 60, 110, 0.45);
   padding-bottom: 80px;
   overflow-x: hidden;
-}
+  /* Scroll snap to center sections */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth touch scrolling on iOS */}
 
 
 
@@ -142,6 +145,53 @@ body {
   from { transform: translateX(0); }
   to   { transform: translateX(calc(-1 * var(--shift, 0px))); }
 }
+
+/* ANNOUNCEMENTS */
+.announce-section {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announce-card {
+  width: min(92%, 360px);
+  border-radius: 18px;
+  text-align: center;
+  transform-origin: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.announce-card:hover {
+  transform: translateY(-6px) scale(1.006);
+  box-shadow: 0 26px 70px rgba(10,10,10,0.45);
+}
+
+.announce-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 100px;
+  margin: 0;
+  height: auto;
+  line-height: auto;
+  background: linear-gradient(90deg, #ffffff, #ffd6e0 40%, #fff7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* per-announcement variants */
+.announce-card.announce-0 { /* Now,... */
+  background: radial-gradient(circle at 10% 20%, rgba(255,154,162,0.12), rgba(255,93,143,0.03));
+}
+.announce-card.announce-1 { /* I have... */
+  background: radial-gradient(circle at 90% 20%, rgba(255,220,150,0.10), rgba(255,140,60,0.02));
+}
+.announce-card.announce-2 { /* a question... */
+  background: radial-gradient(circle at 50% 80%, rgba(180,150,255,0.10), rgba(120,80,255,0.02));
+}
+
 
 
 /* QUESTION */
@@ -349,3 +399,4 @@ body {
     #000
   );
 }
+

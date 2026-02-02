@@ -306,7 +306,7 @@ export default function ProposalAdventure() {
           className="announce-section"
         >
           <motion.div
-            className="announce-card"
+            className={`announce-card announce-${j}`}
             animate={{
               opacity: visible[`announce-${j}`] ? 1 : 0,
               y: visible[`announce-${j}`] ? 0 : 20,
@@ -322,7 +322,6 @@ export default function ProposalAdventure() {
       {/* QUESTION */}
       <section className="question">
         <h1>Will You Be My<br />Valentine?</h1>
-
         <div className="choices">
           <button
             className="yes"
@@ -350,6 +349,7 @@ export default function ProposalAdventure() {
           </motion.button>
 
         </div>
+        <p style={{fontSize: 12}}>on the 16th...</p>
       </section>
 
       {/* ITINERARY */}
