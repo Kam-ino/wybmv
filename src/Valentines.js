@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence, useAnimationControls, useScroll, useTransform } from 'framer-motion'
 import './App.css'
 import Stack from './components/PolaroidStack'
-import { s } from 'framer-motion/client'
 
 // =====================================================
 // CONFIG — EDIT THIS ONLY 💖
@@ -143,7 +142,6 @@ export default function ProposalAdventure() {
 
   const [showItinerary, setShowItinerary] = useState(false)
   const [celebrate, setCelebrate] = useState(false)
-  const [noCount, setNoCount] = useState(0)
   const noButtonControls = useAnimationControls()
 
   useEffect(() => {
@@ -337,7 +335,6 @@ export default function ProposalAdventure() {
                 className="btn"
                 animate={noButtonControls}
                 onClick={() => {
-                    setNoCount((n) => n + 1)
                     noButtonControls.start({
                     x: [0, -8, 8, -8, 8, 0],
                     rotate: [0, -2, 2, -2, 2, 0],

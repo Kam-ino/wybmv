@@ -52,21 +52,9 @@ export default function Stack({
   mobileClickOnly = false,
   mobileBreakpoint = 768
 }) {
-  const [isMobile, setIsMobile] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < mobileBreakpoint);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, [mobileBreakpoint]);
-
   const shouldDisableDrag = false
-  const shouldEnableClick = false
 
   const [stack, setStack] = useState(() => {
     if (cards.length) {
